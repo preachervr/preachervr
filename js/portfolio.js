@@ -98,20 +98,6 @@ themeButtons.forEach(btn => {
   });
 });
 
-// Icons.svg
-
-fetch('assets/icons.svg')
-  .then(res => res.text())
-  .then(svgText => {
-    const parser = new DOMParser();
-    const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
-    const sun = svgDoc.getElementById('sun'); // pick the symbol you want
-    const clone = sun.cloneNode(true);
-    const svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svgEl.setAttribute("viewBox", clone.getAttribute("viewBox"));
-    svgEl.append(...clone.childNodes);
-    document.getElementById('iconContainer').appendChild(svgEl);
-  });
 
 // Portfolio Modal
 
