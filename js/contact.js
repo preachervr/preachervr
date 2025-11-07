@@ -98,17 +98,34 @@ themeButtons.forEach(btn => {
   });
 });
 
-// Icons.svg
+// Contact Form Submit Message
 
-fetch('assets/icons.svg')
-  .then(res => res.text())
-  .then(svgText => {
-    const parser = new DOMParser();
-    const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
-    const sun = svgDoc.getElementById('sun'); // pick the symbol you want
-    const clone = sun.cloneNode(true);
-    const svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svgEl.setAttribute("viewBox", clone.getAttribute("viewBox"));
-    svgEl.append(...clone.childNodes);
-    document.getElementById('iconContainer').appendChild(svgEl);
-  });
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+contactForm.addEventListener("submit", async(e) => {
+  e.preventDefault();
+
+  const formData = new FormData(contactForm);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {"Accept": "application/json"}
+    });
+
+    if (response.ok) {
+      formMessage.textContent = "Thank you! Your message has been sent.";
+      formMessage.classList.remove("hidden", "text-red-500")
+      formMessage.classList.add("text-green-500");
+      form.reset();
+    } else {
+      throw new Error("Form submission error");
+    }
+  } catch (error) {
+    formMessage.textContent = "Oops! Something went wrong. Please try again.";
+    formMessage.classList.remove("hidden", "text-green-500");
+    formMessage.classList.add("text-red-500");
+  }
+});
