@@ -1,3 +1,8 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+label.required::after {
+  content: " *";
+  color: red;
+}
