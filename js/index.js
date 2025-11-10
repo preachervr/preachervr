@@ -73,21 +73,27 @@ document.addEventListener("keydown", e => {
 
 
 // Dark mode
-
 const themeButtons = document.querySelectorAll('.themeToggle');
 const html = document.documentElement;
+
 
 function updateDots(isDark) {
   themeButtons.forEach(btn => {
     const themeDot = btn.querySelector('.themeDot');
     themeDot.classList.toggle('left-1', !isDark);
     themeDot.classList.toggle('right-1', isDark);
+
+    btn.setAttribute('aria-pressed', isDark);
   });
 }
 
-let isDark = localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+let isDark = localStorage.theme === 'dark' || 
+             (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
 html.classList.toggle('dark', isDark);
 updateDots(isDark);
+
 
 themeButtons.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -98,17 +104,9 @@ themeButtons.forEach(btn => {
   });
 });
 
-// Icons.svg
 
-fetch('assets/icons.svg')
-  .then(res => res.text())
-  .then(svgText => {
-    const parser = new DOMParser();
-    const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
-    const sun = svgDoc.getElementById('sun'); // pick the symbol you want
-    const clone = sun.cloneNode(true);
-    const svgEl = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    svgEl.setAttribute("viewBox", clone.getAttribute("viewBox"));
-    svgEl.append(...clone.childNodes);
-    document.getElementById('iconContainer').appendChild(svgEl);
-  });
+// AOS
+
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init();
+});

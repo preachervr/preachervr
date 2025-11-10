@@ -1,20 +1,22 @@
 <!doctype html>
-  <html lang="ro">
+  <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Front-end developer portfolio showcasing clean, modern web design using HTML, CSS, JS, and TailwindCSS.">
-    <meta property="og:title" content="PreacherVR - Front-End Developer">
-    <meta property="og:description" content="Showcasing modern, responsive web design and front-end development projects using HTML, CSS, JavaScript, and TailwindCSS.">
-    <meta property="og:image" content="https://yourwebsite.com/images/hero-background.webp">
-    <meta property="og:url" content="https://yourwebsite.com">
+    <meta name="description" content="Learn more about PreacherVR, a front-end developer specializing in modern, responsive web design and front-end projects with HTML, CSS, JavaScript, and TailwindCSS.">
+    <meta name="keywords" content="About PreacherVR, Front-end Developer, Web Design, TailwindCSS, HTML, CSS, JavaScript">
+    <meta property="og:title" content="About PreacherVR - Front-End Developer">
+    <meta property="og:description" content="Discover the skills, experience, and projects of PreacherVR, a front-end developer focused on modern web development using HTML, CSS, JavaScript, and TailwindCSS.">
+    <meta property="og:image" content="https://yourwebsite.com/images/about-hero.webp">
+    <meta property="og:url" content="https://preachervr.github.io/preachervr/about.html">
     <meta property="og:type" content="website">
-    <title>PreacherVR - About</title>
+    <title>About - PreacherVR</title>
     <link href="dist/output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="images/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon-32x32.png">
   </head>
   <body>
     <svg style="display:none;">
@@ -146,8 +148,8 @@
                 <img src="images/logo.png" class="w-full object-cover rounded-full border-2 border-blue-500" alt="PreacherVR Logo">
               </div>
             </div>
-            <p class="text-justify">Hi, I’m PreacherVR, a passionate front-end developer focused on creating fast, visually appealing, and user-friendly websites. I love transforming ideas into digital experiences that blend 
-              design and functionality seamlessly.</p>
+            <p class="text-center md:text-justify text-base md:text-lg">Hi, I’m PreacherVR, a passionate front-end developer focused on creating fast, visually appealing, and user-friendly websites. 
+              I love transforming ideas into digital experiences that blend design and functionality seamlessly.</p>
           </article>
           <article class="flex flex-col flex-1 gap-4 md:gap-8 lg:gap-12 justify-center">
             <h2 class="text-xl md:text-2xl font-bold text-blue-500 text-center">My Skills</h2>
@@ -230,21 +232,21 @@
         <section class="w-1/2 md:w-3xl lg:w-5xl flex flex-col mx-auto my-4 md:my-8 mb-8 md:mb-14 gap-4 md:gap-6 lg:gap-8">
           <h1 class="text-xl md:text-2xl text-blue-500 font-bold text-center">My goal</h1>
           <article class="flex flex-col md:flex-row gap-8">
-            <div class="flex-1 w-full h-full">
-              <img src="images/coding-session.png" class="w-full h-full object-cover shadow-xl hover:scale-105 hover:border-1 border-blue-500 transition-all duration-200 rounded-3xl">
+            <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="500" class="flex-1 w-full h-full">
+              <img src="images/coding-session.png" class="w-full h-full object-cover shadow-xl hover:scale-105 hover:border-1 border-blue-500 transition-all duration-200 rounded-3xl" loading="lazy">
             </div>
             <div class="flex-1 flex h-full w-full my-auto">
-              <p class="text-justify">My goal is to craft modern, responsive, and visually engaging websites that not only look great but also provide smooth and intuitive user experiences. 
+              <p class="text-center md:text-justify">My goal is to craft modern, responsive, and visually engaging websites that not only look great but also provide smooth and intuitive user experiences. 
               I aim to combine clean design with efficient code — creating digital products that are fast, accessible, and built to last.</p>
             </div>
           </article>
           <h1 class="text-xl md:text-2xl text-blue-500 font-bold text-center">Why choose me?</h1>
           <article class="flex flex-col md:flex-row-reverse gap-8">
-            <div class="flex-1 w-full h-full">
-              <img src="images/making-plans.png" class="w-full h-full object-cover shadow-xl hover:scale-105 hover:border-1 border-blue-500 transition-all duration-200 rounded-3xl">
+            <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="500" class="flex-1 w-full h-full">
+              <img src="images/making-plans.png" class="w-full h-full object-cover shadow-xl hover:scale-105 hover:border-1 border-blue-500 transition-all duration-200 rounded-3xl" loading="lazy">
             </div>
             <div class="flex-1 flex h-full w-full my-auto">
-              <p class="text-justify">I’m passionate about turning ideas into clean, functional, and engaging web experiences. From planning and prototyping to writing precise, maintainable code, I make sure every project is 
+              <p class="text-center md:text-justify">I’m passionate about turning ideas into clean, functional, and engaging web experiences. From planning and prototyping to writing precise, maintainable code, I make sure every project is 
                 intuitive, responsive, and visually appealing. <br>I combine technical skills with a creative mindset, tackling challenges thoughtfully and delivering solutions that work smoothly across devices. Choosing me means partnering 
                 with a developer who listens, plans, and executes with care—making your vision come to life on the web.
             </div>
@@ -273,5 +275,6 @@
       </footer>
     </div>
     <script src="js/about.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   </body>
 </html>

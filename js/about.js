@@ -97,3 +97,9 @@ themeButtons.forEach(btn => {
     updateDots(isDark);
   });
 });
+
+// AOS
+
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init();
+});
