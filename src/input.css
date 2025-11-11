@@ -6,3 +6,8 @@ label.required::after {
   content: " *";
   color: red;
 }
+
+@theme {
+  --font-montserrat: Montserrat, sans-serif;
+  --font-roboto: Roboto, sans-serif;
+}
