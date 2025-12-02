@@ -98,36 +98,135 @@ themeButtons.forEach(btn => {
   });
 });
 
-
-// Portfolio Modal
+// Gallery Modal
 
 const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modalImg");
+const galleryImage = document.getElementById("galleryImage");
 const modalTitle = document.getElementById("modalTitle");
 const modalDesc = document.getElementById("modalDesc");
 const closeModal = document.getElementById("closeModal");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let currentImages = [];
+let currentImageIndex = 0;
+
+function updateGalleryUI() {
+  galleryImage.src = currentImages[currentImageIndex];
+  if (currentImages.length > 1) {
+    prevBtn.classList.remove("hidden");
+    nextBtn.classList.remove("hidden");
+    prevBtn.disabled = currentImageIndex === 0;
+    prevBtn.classList.toggle("opacity-50", prevBtn.disabled);
+    nextBtn.disabled = currentImageIndex === currentImages.length - 1;
+    nextBtn.classList.toggle("opacity-50", nextBtn.disabled);
+
+  } else {
+    prevBtn.classList.add("hidden");
+    nextBtn.classList.add("hidden");
+  }
+}
+function nextImage() {
+  if (currentImageIndex < currentImages.length - 1) {
+    currentImageIndex++;
+    updateGalleryUI();
+  }
+}
+
+function prevImage() {
+  if (currentImageIndex > 0) {
+    currentImageIndex--;
+    updateGalleryUI();
+  }
+}
+
+nextBtn.addEventListener("click", nextImage);
+prevBtn.addEventListener("click", prevImage);
 
 document.querySelectorAll(".group").forEach(card => {
   card.addEventListener("click", () => {
-    modalImg.src = card.dataset.img;
+    const imagesData = card.dataset.images;
+    currentImages = imagesData ? JSON.parse(imagesData.replace(/'/g, '"')) : [card.dataset.img];
+    currentImageIndex = 0;
     modalTitle.textContent = card.dataset.title;
-    modalDesc.textContent = card.dataset.desc;
+    
+    // Split description by |P| delimiter and wrap each in <p> tags
+    const descText = card.dataset.desc;
+    if (descText) {
+      const paragraphs = descText.split('|P|').map(p => `<p>${p.trim()}</p>`).join('');
+      modalDesc.innerHTML = paragraphs;
+    } else {
+      modalDesc.innerHTML = '';
+    }
+
+    updateGalleryUI();
+
     modal.classList.remove("opacity-0", "pointer-events-none");
     modal.classList.add("flex", "opacity-100");
+    const galleryContainer = document.getElementById("galleryImage").parentNode;
+    let startX;
+    galleryContainer.addEventListener('touchstart', (e) => {
+
+        startX = e.touches[0].clientX;
+
+    });
+    galleryContainer.addEventListener('touchmove', (e) => {
+
+        e.preventDefault();
+
+    });
+    galleryContainer.addEventListener('touchend', (e) => {
+
+        const endX = e.changedTouches[0].clientX;
+
+        const diffX = endX - startX;
+
+       
+
+        if (Math.abs(diffX) > 50) {
+
+            if (diffX < 0) {
+
+                nextImage();
+
+            } else {
+
+                prevImage();
+
+            }
+
+        }
+
+    });
+
+
+
   });
-});
 
+});
 function hideModal() {
+
   modal.classList.remove("opacity-100");
+
   modal.classList.add("opacity-0", "pointer-events-none");
+
 }
-
 closeModal.addEventListener("click", hideModal);
-
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") hideModal();
-});
 
+  if (e.key === "Escape") hideModal();
+
+  if (modal.classList.contains("opacity-100")) {
+
+    if (e.key === "ArrowLeft") prevImage();
+
+    if (e.key === "ArrowRight") nextImage();
+
+  }
+
+});
 modal.addEventListener("click", e => {
+
   if (e.target === modal) hideModal();
+
 });
