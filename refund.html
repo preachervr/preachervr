@@ -22,6 +22,7 @@
     <symbol id="arrowUp" viewBox="0 0 24 24"><title>Arrow Up</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" /></symbol>
     <symbol id="sun" viewBox="0 0 24 24"><title>Sun</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 19a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" /><path d="M18.313 16.91l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.218 -1.567l.102 .07z" /><path d="M7.007 16.993a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z" /><path d="M4 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" /><path d="M21 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" /><path d="M6.213 4.81l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.217 -1.567l.102 .07z" /><path d="M19.107 4.893a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z" /><path d="M12 2a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" /><path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z" /></symbol>
     <symbol id="moon" viewBox="0 0 24 24"><title>Moon</title><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 1.992a10 10 0 1 0 9.236 13.838c.341 -.82 -.476 -1.644 -1.298 -1.31a6.5 6.5 0 0 1 -6.864 -10.787l.077 -.08c.551 -.63 .113 -1.653 -.758 -1.653h-.266l-.068 -.006l-.06 -.002z" /></symbol>
+    <symbol id="iconDoc" viewBox="0 0 24 24"><title>Document</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"/></symbol>
     <symbol id="iconCard" viewBox="0 0 24 24"><title>Card</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3z"/></symbol>
   </svg>
 
@@ -38,7 +39,7 @@
         <nav id="navLinks" class="hidden md:flex flex-row gap-8 lg:gap-12 text-sm lg:text-base font-medium text-slate-600 dark:text-slate-300">
           <a href="index.html" class="hover:text-blue-500 transition-colors duration-200">Home</a>
           <a href="about.html" class="hover:text-blue-500 transition-colors duration-200">About</a>
-          <a href="services.html" class="hover:text-blue-500 transition-colors duration-200">Services</a>
+          <a href="pricing.html" class="hover:text-blue-500 transition-colors duration-200">Pricing</a>
           <a href="portfolio.html" class="hover:text-blue-500 transition-colors duration-200">Portfolio</a>
           <a href="contact.html" class="hover:text-blue-500 transition-colors duration-200">Contact</a>
         </nav>
@@ -69,7 +70,7 @@
         <nav class="flex flex-col gap-6 text-lg font-medium text-slate-700 dark:text-slate-200 font-montserrat">
           <a href="index.html" class="hover:text-blue-500 transition-colors">Home</a>
           <a href="about.html" class="hover:text-blue-500 transition-colors">About</a>
-          <a href="services.html" class="hover:text-blue-500 transition-colors">Services</a>
+          <a href="pricing.html" class="hover:text-blue-500 transition-colors">Pricing</a>
           <a href="portfolio.html" class="hover:text-blue-500 transition-colors">Portfolio</a>
           <a href="contact.html" class="hover:text-blue-500 transition-colors">Contact</a>
         </nav>
@@ -106,35 +107,21 @@
            <a href="refund.html" class="bg-blue-500 text-white dark:bg-blue-600 px-6 py-3 rounded-full shadow-md transition-all">Refund Policy</a>
         </nav>
 
-        <article class="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 shadow-sm border border-slate-200 dark:border-slate-700" data-aos="fade-up">
+        <article id="refund" class="scroll-mt-32 group bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 shadow-sm hover:shadow-xl dark:shadow-none dark:hover:shadow-blue-900/20 border border-slate-200 dark:border-slate-700 transition-all duration-300" data-aos="fade-up">
           <div class="flex items-center gap-6 mb-8">
-            <div class="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-blue-600 dark:text-blue-400 flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-slate-700 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300 flex-shrink-0">
               <svg aria-hidden="true" class="w-8 h-8"><use href="#iconCard"></use></svg>
             </div>
             <h2 class="text-2xl md:text-3xl font-bold font-montserrat text-slate-800 dark:text-white">Refund Policy</h2>
           </div>
           
           <div class="text-slate-600 dark:text-slate-400 leading-relaxed space-y-6">
-            <p>We stand behind the quality of our digital templates and UI kits. We want you to be completely satisfied with your purchase. Please review our refund terms below.</p>
+            <p>We want you to be completely satisfied with your purchase. Our order process and returns are securely handled by our Merchant of Record, Paddle.com.</p>
             
             <div>
-              <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-3">14-Day Guarantee for Digital Products</h3>
-              <p>Because our products are digital software and source code, sales are generally considered final once downloaded. However, we offer a <strong>14-day money-back guarantee</strong> under the following conditions:</p>
-              <ul class="list-disc pl-5 mt-3 space-y-2">
-                <li>The digital product is fundamentally flawed, broken, or contains critical errors.</li>
-                <li>The product does not match the description or functionality advertised on our website.</li>
-                <li>You have reached out for support, and we are unable to resolve the technical issue within a reasonable timeframe.</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-2">Non-Refundable Scenarios</h3>
-              <p>We do not issue refunds for "change of mind" after the digital files have been successfully downloaded, nor do we issue refunds if you simply lack the technical skill required to use HTML/Tailwind templates.</p>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-2">How to Request a Refund</h3>
-              <p>If you meet the criteria for a refund, please send an email to our support team with your <strong>Order Number</strong> and a clear description of the issue. Because our payments are processed via our Merchant of Record, Paddle, approved refunds will be credited back to your original payment method via Paddle within 3-5 business days.</p>
+              <h3 class="text-lg font-bold text-slate-800 dark:text-white mb-3">Digital Products Guarantee</h3>
+              <p>We offer a standard <strong>30-day refund policy</strong> for all our digital templates and UI kits. If you are not completely satisfied with your purchase, you can request a full refund within 30 days of your transaction.</p>
+              <p class="mt-4">To request a refund, please contact us with your order details, or reach out directly to Paddle's buyer support team. Once approved, the refund will be processed by Paddle back to your original payment method. No complex conditions, no exceptions.</p>
             </div>
           </div>
         </article>
@@ -172,7 +159,7 @@
             
             <nav class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm font-medium tracking-wide">
                 <a href="about.html" class="hover:text-blue-400 transition-colors">About</a>
-                <a href="services.html" class="hover:text-blue-400 transition-colors">Services</a>
+                <a href="pricing.html" class="hover:text-blue-400 transition-colors">Pricing</a>
                 <a href="portfolio.html" class="hover:text-blue-400 transition-colors">Portfolio</a>
                 <a href="contact.html" class="hover:text-blue-400 transition-colors">Contact</a>
                 <a href="terms.html" class="hover:text-blue-400 transition-colors">Terms</a>
